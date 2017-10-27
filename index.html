@@ -5,16 +5,30 @@
 
 		<meta charset="UTF-8">
 
-		<link href="https://fonts.googleapis.com/css?family=Alegreya+SC:400,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
 
 		<style>
 			
 			body{
-			font-family: 'Alegreya SC', serif;
+			font-family: 'Arimo', serif;
 			font-style: 700;
 			font-size: 40px;
+			/*max-width: 1000px;*/
 			color: #1658b5;
-			margin: 30px 0px 0px 100px;
+			background-color: ;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			}
+
+			h1{
+			font-family: 'Arimo', serif;
+			font-style: 700;
+			font-size: 50px;
+			text-align: center;
+			/*max-width: 1000px;*/
+			color: #000000;
+			padding: 20px;
 			}
 		
 		</style>
@@ -23,6 +37,13 @@
 
 	</head>
 	<body>
+
+		<div id="container">
+			<h1>Befolningsstatistikk for Gildeskaal</h1>
+			<canvas id="myChart" width="800" height="500"></canvas>
+
+		</div>
+
 
 		<script>
 			console.log("hei"); 
@@ -60,7 +81,6 @@
 			var kvinner = [1389,1379,1365,1323,1333,1320,1337,1302,1301,1298,1286,1265,1248,1229,1206,1157,1168,1128,1138,1106,1080,1066,1046,1050,1018,1022,1010,1015,1005,1001,1010,995];
 			var totalt = [2713,2673,2639,2591,2594,2571,2569,2512,2505,2515,2494,2458,2419,2374,2351,2268,2276,2220,2215,2178,2107,2081,2046,2053,1996,2020,2000,2006,2023,2014,2043,2024];
 
-
 			var ctx = document.getElementById("myChart");
 			var myChart = new Chart(ctx, {
   			type: 'line',
@@ -71,10 +91,8 @@
             			scales: {
                 			yAxes: [{
                     ticks: {
-                        beginAtZero:true,
-                        min: 0,
-                        max: 50000    
-                    }
+                    beginAtZero:true
+                }
                   }]
                }
             },
@@ -84,32 +102,32 @@
         	data: menn, 
         	label: 'menn',
         	fill: true,
-        	borderColor: '#1ec9b0'
+        	backgroundColor: 'rgba(38, 141, 200, 0.2)',
+        	borderColor: '#268dc8',
       		},
       		{ 
         	data: kvinner, 
         	label: 'Kvinner',
         	fill: true,
-        	borderColor: '#0da1fc'
+        	backgroundColor: 'rgba(251, 73, 79, 0.2)',
+        	borderColor: '#fb494f'
       		},
       		{ 
         	data: totalt, 
         	label: 'Totalt',
         	fill: true,
-        	borderColor: '#ff6726'
+        	backgroundColor: 'rgba(0, 234, 48, 0.2)',
+        	borderColor: '#00ea30',
+        	
       		},
     		]
+
 
   			}
 			});
 
 
 		</script>
-		<div id="container">
-			Gildeskaal
-			<canvas id="myChart" width="1600" height="900"></canvas>
-
-		</div>
-
+	
 	</body>
 </html>
