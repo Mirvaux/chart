@@ -1,0 +1,115 @@
+<html>
+	<head>
+ 		
+ 		<title ="Cryptograph"></title>
+
+		<meta charset="UTF-8">
+
+		<link href="https://fonts.googleapis.com/css?family=Alegreya+SC:400,700" rel="stylesheet">
+
+		<style>
+			
+			body{
+			font-family: 'Alegreya SC', serif;
+			font-style: 700;
+			font-size: 40px;
+			color: #1658b5;
+			margin: 30px 0px 0px 100px;
+			}
+		
+		</style>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+	</head>
+	<body>
+
+		<script>
+			console.log("hei"); 
+
+			// var key = "";
+			// var url = "https://beta.api.met.no/weatherapi/tidalwater/1.1/";
+			// fetch(url)
+			//  .then(function(response) {
+			//  	return response.json();
+			// })
+			// .then(function(response) {
+			// 	console.log(response);
+			// })
+			
+			var targetDate = new Date() // Current date/time of user computer
+			var timestamp = targetDate.getTime()/1000 + targetDate.getTimezoneOffset() * 60
+			// var astroUrl = "https://api.nasa.gov/neo/rest/v1/feed?start_date=" + (targetDate.getYear() + 2000 - 100) + '-' + ('0'+targetDate.getDate().slice(-2) + '-' + ('0'+targetDate.getMonth().slice(-2) + "end_date=2015-09-08&api_key=DEMO_KEY";
+			// var astroUrl = "http://data.ssb.no/api/v0/dataset/104857.json?lang=no";
+			// fetch(astroUrl)
+			//  .then(function(response) {
+			//  	return response.json();
+			// })
+			
+			// .then(function(response) {
+			// 	console.log(response);
+			// })
+
+			// .then(function(response) {
+			// 	console.log(response);
+			// 	console.log(response.dimension.Region.category.label(1838));
+			// })
+
+			var aar = [1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017];
+			var menn = [1324,1294,1274,1268,1261,1251,1232,1210,1204,1217,1208,1193,1171,1145,1145,1111,1108,1092,1077,1072,1027,1015,1000,1003,978,998,990,991,1018,1013,1033,1029];
+			var kvinner = [1389,1379,1365,1323,1333,1320,1337,1302,1301,1298,1286,1265,1248,1229,1206,1157,1168,1128,1138,1106,1080,1066,1046,1050,1018,1022,1010,1015,1005,1001,1010,995];
+			var totalt = [2713,2673,2639,2591,2594,2571,2569,2512,2505,2515,2494,2458,2419,2374,2351,2268,2276,2220,2215,2178,2107,2081,2046,2053,1996,2020,2000,2006,2023,2014,2043,2024];
+
+
+			var ctx = document.getElementById("myChart");
+			var myChart = new Chart(ctx, {
+  			type: 'line',
+  			yAxisID: 500,
+  			data: {
+    			labels: aar,
+    				options: {
+            			scales: {
+                			yAxes: [{
+                    ticks: {
+                        beginAtZero:true,
+                        min: 0,
+                        max: 50000    
+                    }
+                  }]
+               }
+            },
+            
+    		datasets: [
+      		{ 
+        	data: menn, 
+        	label: 'menn',
+        	fill: true,
+        	borderColor: '#1ec9b0'
+      		},
+      		{ 
+        	data: kvinner, 
+        	label: 'Kvinner',
+        	fill: true,
+        	borderColor: '#0da1fc'
+      		},
+      		{ 
+        	data: totalt, 
+        	label: 'Totalt',
+        	fill: true,
+        	borderColor: '#ff6726'
+      		},
+    		]
+
+  			}
+			});
+
+
+		</script>
+		<div id="container">
+			Gildeskaal
+			<canvas id="myChart" width="1600" height="900"></canvas>
+
+		</div>
+
+	</body>
+</html>
