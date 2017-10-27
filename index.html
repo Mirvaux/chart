@@ -7,6 +7,8 @@
 
 		<link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 		<style>
 			
 			body{
@@ -39,7 +41,7 @@
 	<body>
 
 		<div id="container">
-			<h1>Befolningsstatistikk for Gildeskaal</h1>
+			<h1>Befolningsstatistikk for Gildeskål</h1>
 			<canvas id="myChart" width="800" height="500"></canvas>
 
 		</div>
@@ -102,32 +104,43 @@
         	data: menn, 
         	label: 'menn',
         	fill: true,
-        	backgroundColor: 'rgba(38, 141, 200, 0.2)',
+        	backgroundColor: 'rgba(38, 141, 200, 0.1)',
         	borderColor: '#268dc8',
       		},
       		{ 
         	data: kvinner, 
         	label: 'Kvinner',
         	fill: true,
-        	backgroundColor: 'rgba(251, 73, 79, 0.2)',
+        	backgroundColor: 'rgba(251, 73, 79, 0.1)',
         	borderColor: '#fb494f'
       		},
       		{ 
         	data: totalt, 
         	label: 'Totalt',
         	fill: true,
-        	backgroundColor: 'rgba(0, 234, 48, 0.2)',
+        	backgroundColor: 'rgba(48, 114, 255, 0.1)',
         	borderColor: '#00ea30',
         	
       		},
     		]
 
+    	},
+  			options: {
+            			scales: {
+                			yAxes: [{
+                    ticks: {
+                    beginAtZero:true
+                }
+                  }]
+               }
+            }
 
-  			}
 			});
 
 
 		</script>
-	
+		
+		<!-- <script type="text/javascript"></script> -->
+
 	</body>
 </html>
